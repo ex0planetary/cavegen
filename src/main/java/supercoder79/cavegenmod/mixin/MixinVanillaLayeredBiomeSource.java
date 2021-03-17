@@ -37,7 +37,7 @@ public class MixinVanillaLayeredBiomeSource {
 		if (biomeY < 14) {
 			if (this.caveBiomeNoise.sample(biomeX / 85.0, 0, biomeZ / 85.0) > 0.3F) {
 				return this.biomeRegistry.get(BiomeKeys.LUSH_CAVES);
-			} else if if (this.caveBiomeNoise.sample(biomeX / 85.0, 0, biomeZ / 85.0) < -0.3F) {
+			} else if (this.caveBiomeNoise.sample(biomeX / 85.0, 0, biomeZ / 85.0) < -0.3F) {
 				return this.biomeRegistry.get(BiomeKeys.DRIPSTONE_CAVES);
 			}
 		}
