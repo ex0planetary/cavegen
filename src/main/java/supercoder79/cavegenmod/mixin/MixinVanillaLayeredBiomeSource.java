@@ -29,14 +29,15 @@ public class MixinVanillaLayeredBiomeSource {
 	}
 
 	/**
-	 * @author SuperCoder79
+	 * @author SuperCoder79 (initial code and the bulk of the work)
+	 * @author ex0planetary (tweaks to biome size and addition of regular caves)
 	 */
 	@Overwrite
 	public Biome getBiomeForNoiseGen(int biomeX, int biomeY, int biomeZ) {
 		if (biomeY < 14) {
-			if (this.caveBiomeNoise.sample(biomeX / 60.0, 0, biomeZ / 60.0) > 0) {
+			if (this.caveBiomeNoise.sample(biomeX / 85.0, 0, biomeZ / 85.0) > 0.3F) {
 				return this.biomeRegistry.get(BiomeKeys.LUSH_CAVES);
-			} else {
+			} else if if (this.caveBiomeNoise.sample(biomeX / 85.0, 0, biomeZ / 85.0) < -0.3F) {
 				return this.biomeRegistry.get(BiomeKeys.DRIPSTONE_CAVES);
 			}
 		}
